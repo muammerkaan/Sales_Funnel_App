@@ -9,7 +9,6 @@ The Sales Funnel App provides an intuitive platform for analyzing and forecastin
 - **Forecasting**: Users can forecast future sales performance.
 - **Interactive Visualizations**: The app includes a variety of plots such as funnel plots, boxplots, and average employee performance charts that can be interacted with to find the recquirements for your business objectives.
 
-
 ## Usage
 After launching the app, follow these steps to analyze your sales funnel data:
 1. Upload your dataset using the sidebar or use the provided example dataset.
@@ -17,7 +16,10 @@ After launching the app, follow these steps to analyze your sales funnel data:
 3. Review the generated visualizations for insights into your sales funnel's performance.
 4. Use the forecast settings to predict future conversions and compare them against actual data.
 
-The app will guide you through each step with instructions and tooltips to ensure a seamless user experience.
+## Try the App
+You can access the live version of the app here:
+[Launch My Streamlit App](https://muammerkaan-sales-funnel-app-funnelforecast-app-github-amvwf0.streamlit.app/)
+
 
 ## Contact
 For any queries or technical support related to the Sales Funnel App, you can reach out through the following channels:
