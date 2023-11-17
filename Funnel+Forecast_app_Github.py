@@ -450,7 +450,9 @@ def load_data(file):
 uploaded_file = st.sidebar.file_uploader(
     "Choose a CSV file in a format which includes:" +
     " Two columns per funnel stage with the first column being the stagename_Date and the second column being the stagename_ID" + 
-    " and the stages being in chronological order.", 
+    " and the stages being in chronological order." +
+    "Here is a link to the Github repository where you can find the source code and an example data set:" +
+    "https://github.com/muammerkaan/Sales_Funnel_App",
     type="csv")
 
 if uploaded_file:
