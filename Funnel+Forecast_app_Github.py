@@ -5,7 +5,7 @@ import plotly.express as px
 import numpy as np
 import datetime
 from sklearn.metrics import mean_squared_error, r2_score
-# streamlit run Funnel+Forecast_app.py
+# streamlit run Funnel+Forecast_app_Github.py
 
 
 class TimeBasedTopDownFunnel:
