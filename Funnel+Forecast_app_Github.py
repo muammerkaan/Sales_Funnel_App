@@ -5,6 +5,7 @@ import plotly.express as px
 import numpy as np
 import datetime
 from sklearn.metrics import mean_squared_error, r2_score
+import os
 # streamlit run Funnel+Forecast_app_Github.py
 
 
@@ -431,32 +432,36 @@ class Forecast:
         
         return metrics_df
 
-
-# Run the Streamlit application
-if __name__ == "__main__":
-    st.title("Time-Based Top-Down Funnel + Connversion-Based Forecasting Analysis")
+# Load the data
+def load_data(file=None):
+    if file is not None:
+        df = pd.read_csv(file)
+    else:
+        # Load default dataset if no file is uploaded
+        default_data_path = 'Example_df.csv'  # Update with the actual path
+        df = pd.read_csv(default_data_path)
+    return process_dataframe(df)
 
 def process_dataframe(df):
     for i in range(0, len(df.columns), 2):
         df[df.columns[i]] = pd.to_datetime(df[df.columns[i]])
     return df
 
-# Load the data
-#@st.cache(allow_output_mutation=True)
-def load_data(file):
-    df = pd.read_csv(file)
-    return process_dataframe(df)
+# Run the Streamlit application
+if __name__ == "__main__":
+    st.title("Time-Based Top-Down Funnel + Connversion-Based Forecasting Analysis")
 
-uploaded_file = st.sidebar.file_uploader(
-    "Choose a CSV file in a format which includes:" +
-    " Two columns per funnel stage with the first column being the stagename_Date and the second column being the stagename_ID" + 
-    " and the stages being in chronological order. " +
-    " Here is a link to the Github repository where you can find the source code and an example data set: " +
-    "https://github.com/muammerkaan/Sales_Funnel_App",
-    type="csv")
+    # Use the sidebar for file upload; load example data if no file is uploaded
+    uploaded_file = st.sidebar.file_uploader(
+        "Choose a CSV file in a format which includes:" +
+        " Two columns per funnel stage with the first column being the stagename_Date and the second column being the stagename_ID" + 
+        " and the stages being in chronological order. " +
+        " Here is a link to the Github repository where you can find the source code and the example data set that is used: " +
+        "https://github.com/muammerkaan/Sales_Funnel_App",
+        type="csv")
 
-if uploaded_file:
-    df = load_data(uploaded_file)
+    # Load either the uploaded file or the example dataset
+    df = load_data(uploaded_file if uploaded_file is not None else None)
 
     # Create an instance of the TimeBasedTopDownFunnel class
     funnel = TimeBasedTopDownFunnel(df)
