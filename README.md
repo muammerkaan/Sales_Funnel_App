@@ -18,7 +18,7 @@ After launching the app, follow these steps to analyze your sales funnel data:
 
 ## Try the App
 You can access the live version of the app here:
-[Launch My Streamlit App](https://muammerkaan-sales-funnel-app-funnelforecast-app-github-amvwf0.streamlit.app/)
+[Launch My Sales Funnel App](https://muammerkaan-sales-funnel-app-funnelforecast-app-github-amvwf0.streamlit.app/)
 
 
 ## Contact
